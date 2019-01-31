@@ -1,0 +1,34 @@
+<ion-content padding>
+
+	<div class="d-flex h-full items-center">
+
+		<div>
+
+			<div class="text-center">
+				<h1 class="font-bolder">
+					{{ 'SPLASH.TITLE' | translate }}
+				</h1>
+			</div>
+
+			<div class="logo-padding">
+				<img src="assets/imgs/logo-black.svg">
+			</div>
+
+			<div>
+				<p>
+					<button ion-button block (click)="login()">
+						{{ 'SPLASH.LOGIN_BUTTON' | translate }}
+					</button>
+				</p>
+
+				<p>
+					<button ion-button color="secondary" block (click)="signup()">
+						{{ 'SPLASH.SIGNUP_BUTTON' | translate }}
+					</button>
+				</p>
+			</div>
+
+		</div>
+	</div>
+
+</ion-content>

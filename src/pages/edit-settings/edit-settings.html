@@ -1,0 +1,85 @@
+
+<ion-header>
+
+	<ion-navbar>
+		<ion-title>{{ 'EDIT_SETTINGS.PAGE_HEADER' | translate }}</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+	<ion-list>
+	
+		<!-- EDIT NAME -->
+		<ion-item *ngIf="fields.indexOf('firstName')>-1">
+			<ion-label color="primary" stacked text-uppercase>
+				{{ 'EDIT_SETTINGS.FIRST_NAME_LABEL' | translate }}
+			</ion-label>
+			<ion-input 
+				type="text" 
+				[(ngModel)]="user.firstName">
+			</ion-input>
+		</ion-item>
+		<ion-item *ngIf="fields.indexOf('firstName')>-1">
+			<ion-label color="primary" stacked text-uppercase>
+				{{ 'EDIT_SETTINGS.LAST_NAME_LABEL' | translate }}
+			</ion-label>
+			<ion-input 
+				type="text" 
+				[(ngModel)]="user.lastName">
+			</ion-input>
+		</ion-item>
+
+		<!-- EDIT EMAIL ADDRESS -->
+		<ion-item *ngIf="fields.indexOf('emailAddress')>-1">
+			<ion-label color="primary" stacked text-uppercase>
+				{{ 'EDIT_SETTINGS.EMAIL_LABEL' | translate }}
+			</ion-label>
+			<ion-input 
+				type="email" 
+				[(ngModel)]="user.emailAddress">
+			</ion-input>
+		</ion-item>
+
+		<!-- EDIT MOBILE NUMBER -->
+		<ion-item *ngIf="fields.indexOf('mobileNumber')>-1">
+			<ion-label color="primary" stacked text-uppercase>
+				{{ 'EDIT_SETTINGS.MOBILE_NUMBER_LABEL' | translate }}
+			</ion-label>
+			<ion-input 
+				type="number" 
+				[(ngModel)]="user.mobileNumber">
+			</ion-input>
+		</ion-item>
+
+		<!-- EDIT SLOW MODE -->
+		<ion-item *ngIf="fields.indexOf('slowMode')>-1">
+			<ion-label>
+				{{ 'EDIT_SETTINGS.SLOW_MODE_LABEL' | translate }}
+			</ion-label>
+			<ion-toggle 
+				[(ngModel)]="user.slowMode">		
+			</ion-toggle>
+		</ion-item>
+
+		<!-- EDIT SHOW CODES -->
+		<ion-item *ngIf="fields.indexOf('showCodes')>-1">
+			<ion-label>
+				{{ 'EDIT_SETTINGS.SHOW_CODES_LABEL' | translate }}
+			</ion-label>
+			<ion-toggle 
+				[(ngModel)]="user.showCodes">		
+			</ion-toggle>
+		</ion-item>
+
+		<button ion-item (click)="saveChanges()">
+			<ion-label>
+				{{ 'EDIT_SETTINGS.SAVE_BUTTON' | translate }}
+			</ion-label>
+		</button>
+	
+	</ion-list>
+
+</ion-content>

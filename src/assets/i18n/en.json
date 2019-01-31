@@ -1,0 +1,136 @@
+{
+	"NAV": {
+		"BACK": "Back"
+	},
+	"LIST": {
+		"TITLE": "My Issues ({{count}})",
+		"TAB": "My Issues",
+		"ITEM_TITLE": "Issue {{issueId}} title",
+		"ITEM_DESCRIPTION": "Issue {{issueId}} description",
+		"LOADING": "Loading..."
+	},
+	"SETTINGS": {
+		"TITLE": "Settings",
+		"TAB": "Settings",
+		"LOGOUT_BUTTON": "Logout",
+		"SUPERUSER_SETTINGS": "Superuser settings",
+		"DELETE_BUTTON": "Delete account",
+		"ACCOUNT_HEADER": "Account",
+		"NAME_LABEL": "Name",
+		"EMAIL_LABEL": "Email",
+		"MOBILE_LABEL": "Mobile",
+		"NOTIFICATIONS_HEADER": "Notifcations",
+		"EMAIL_NOTIFICATIONS_LABEL": "Email notifications",
+		"PUSH_NOTIFICATIONS_LABEL": "Push notifications",
+		"ACTIONS_HEADER": "Actions",
+		"LOADING": "Loading...",
+		"LOGGING_OUT": "Logging out...",
+		"LOGOUT_POPUP": {
+			"TITLE": "Confirm",
+			"MESSAGE": "Are you sure you want to logout?",
+			"CANCEL": "Cancel",
+			"CONFIRM": "Logout"
+		},
+		"DELETING_ACCOUNT": "Deleting account...",
+		"DELETE_POPUP": {
+			"TITLE": "Confirm",
+			"MESSAGE": "Are you sure you want to delete your account?",
+			"CANCEL": "Cancel",
+			"CONFIRM": "Confirm"
+		}
+	},
+	"EDIT_SETTINGS": {
+		"PAGE_HEADER": "Edit",
+		"EMAIL_LABEL": "Email address",
+		"FIRST_NAME_LABEL": "First name",
+		"LAST_NAME_LABEL": "Last name",
+		"MOBILE_NUMBER_LABEL": "Mobile number",
+		"SAVE_BUTTON": "Save changes",
+		"SLOW_MODE_LABEL": "Slow mode",
+		"SHOW_CODES_LABEL": "Show codes",
+		"SAVING": "Saving..."
+	},
+	"NEW": {
+		"LOADING": "Loading...",
+		"SAVING": "Saving...",
+		"TITLE": "Create new issue",
+		"CAMERA_BUTTON": "Take picture",
+		"LIBRARY_BUTTON": "Select picture",
+		"SAVE_BUTTON": "Save",
+		"CANCEL_BUTTON": "Cancel",
+		"FAILURE_POPUP": {
+			"TITLE": "Error",
+			"BUTTON": "OK"
+		},
+		"ACTION_SHEET": {
+			"CAMERA": "Camera",
+			"LIBRARY": "Library",
+			"CANCEL": "Cancel"
+		},
+		"ADD_IMAGE_BUTTON": "Add photo",
+		"DELETE_IMAGE": {
+			"TITLE": "Confirm",
+			"MESSAGE": "Are you sure you want to remove this image?",
+			"CONFIRM": "OK",
+			"CANCEL": "Cancel"
+		}
+	},
+	"DETAIL": {
+		"TITLE": "Issue {{issueId}}",
+		"INTRO": "This is issue {{issueId}}"
+	},
+	"LOGIN": {
+		"TITLE": "Login to your account",
+		"EMAIL_LABEL": "Email",
+		"PASSWORD_LABEL": "Password",
+		"LOGIN_BUTTON": "Login",
+		"FORGOT_PASSWORD_BUTTON": "Forgot your password?",
+		"LOGGING_IN": "Loading...",
+		"FAILURE_POPUP": {
+			"TITLE": "Error",
+			"BUTTON": "OK"
+		},
+		"PASSWORD_INPUT": {
+			"TITLE": "Password Reset",
+			"MESSAGE": "Enter you email address and we will send you an email...",
+			"PLACEHOLDER": "email address",
+			"CANCEL": "Cancel",
+			"OK": "OK"
+		},
+		"PASSWORD_SUCCESS": {
+			"TITLE": "Success",
+			"MESSAGE": "We have sent you an email...",
+			"BUTTON": "OK"
+		}
+	},
+	"SIGNUP": {
+		"TITLE": "Step {{page}} of 2",
+		"EMAIL_LABEL": "Email",
+		"PASSWORD_LABEL": "Password",
+		"BUTTON": "Sign up",
+		"SIGNING_UP": "Creating your account...",
+		"FAILURE_POPUP": {
+			"TITLE": "Error",
+			"BUTTON": "OK"
+		},
+		"FIRST_NAME": "First name",
+		"LAST_NAME": "Last name",
+		"INVALID_EMAIL": "Invalid email!",
+		"INVALID_PASSWORD": "Invalid password!",
+		"INVALID_FIRST_NAME": "This is an invalid first name!",
+		"INVALID_LAST_NAME": "Last name invalid!!!",
+		"BUTTON_1": "Next",
+		"BUTTON_2": "Complete",
+		"TERMS_AND_CONDITIONS": "I have read and agree to the Terms & Conditions",
+		"INVALID_TERMS_AND_CONDITIONS": "Please confirm that you agree to the Terms & Conditions"
+	},
+	"SPLASH": {
+		"TITLE": "Issue Reporting App",
+		"LOGIN_BUTTON": "Login",
+		"SIGNUP_BUTTON": "Sign up"
+	},
+	"SIGNUP_COMPLETE": {
+		"MAIN_MESSAGE": "Thanks for signing up! We've sent you a verifcation email etc etc...",
+		"BUTTON": "Back to landing page"
+	}
+}

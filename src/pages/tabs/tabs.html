@@ -1,0 +1,12 @@
+<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="{{'LIST.TAB' | translate}}" tabIcon="list"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="{{'SETTINGS.TAB' | translate}}" tabIcon="settings"></ion-tab>
+</ion-tabs>
+
+
+<ion-fab bottom center>
+    <button ion-fab (click)="createNew()">
+        <ion-icon name="add" class="add-button"></ion-icon>
+    </button>
+</ion-fab>
+

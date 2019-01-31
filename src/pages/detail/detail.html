@@ -1,0 +1,52 @@
+<ion-header>
+
+	<ion-navbar>
+		<ion-title>
+			{{ 'DETAIL.TITLE' | translate: {issueId: issue.id} }}
+		</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+	<div class="w-full h-img-box" margin-bottom>
+
+		<div class="w-full h-full p-relative">
+
+			<ion-slides class="w-full h-full bg-img-box border-radius-img-box" padding #imageSlider>
+
+				<ion-slide class="w-full h-full" padding-top padding-left padding-right *ngFor="let image of issue.images">
+
+					<div class="w-full h-img-box d-flex items-center justify-center">
+
+						<img class="mh-full mw-full" [src]="image">
+
+					</div>
+
+				</ion-slide>
+
+			</ion-slides>
+
+		</div>
+
+	</div>
+	
+	<ion-list>
+
+		<ion-item>
+			{{ issue.type }}
+		</ion-item>
+
+		<ion-item>
+			{{ issue.description }}
+		</ion-item>
+
+		<ion-item>
+			{{ issue.reportedDate | date: 'dd/MM/yyyy' }}
+		</ion-item>
+
+	</ion-list>
+	
+</ion-content>

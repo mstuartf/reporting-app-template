@@ -1,0 +1,56 @@
+<ion-header no-border>
+
+  <ion-navbar transparent>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="d-flex justify-center pt-25">
+
+    <div>
+
+      <div class="text-center" margin-bottom padding-bottom>
+        <h1 class="font-bolder">
+          {{ 'LOGIN.TITLE' | translate }}
+        </h1>
+      </div>
+
+      <ion-list>
+
+        <ion-item>
+          <ion-label fixed>
+            {{ 'LOGIN.EMAIL_LABEL' | translate }}
+          </ion-label>
+          <ion-input type="email" [(ngModel)]="user.emailAddress" name="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>
+            {{ 'LOGIN.PASSWORD_LABEL' | translate }}
+          </ion-label>
+          <ion-input type="password" [(ngModel)]="user.password" name="password"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <div>
+        <p>
+          <button ion-button color="primary" block (click)="doLogin()">
+            {{ 'LOGIN.LOGIN_BUTTON' | translate }}
+          </button>
+        </p>
+        <p>
+          <button ion-button color="secondary" block (click)="forgotPassword()">
+            {{ 'LOGIN.FORGOT_PASSWORD_BUTTON' | translate }}
+          </button>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</ion-content>

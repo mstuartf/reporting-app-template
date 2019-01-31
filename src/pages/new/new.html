@@ -1,0 +1,91 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-title>
+      {{ 'NEW.TITLE' | translate }}
+    </ion-title>
+
+    <ion-buttons start>
+      <button ion-button (click)="closePage()">
+        {{ 'NEW.CANCEL_BUTTON' | translate }} 
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button (click)="save()">
+        {{ 'NEW.SAVE_BUTTON' | translate }}
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <!-- HIDDEN FILE INPUT ELEMENT TO USE FOR BROWSER TESTING -->
+  <input #browserFileInput type="file" class="hidden-input" name="files[]" (change)="handleBrowserImage($event)" />
+
+  <form>
+
+    <div class="w-full h-img-box">
+
+      <div class="w-full h-full p-relative">
+
+        <ion-slides class="w-full h-full bg-img-box border-radius-img-box" padding #imageSlider>
+
+          <ion-slide class="w-full h-full" padding-top padding-left padding-right *ngFor="let image of newIssue.images">
+
+            <div class="w-full h-img-box d-flex items-center justify-center">
+
+              <img class="mh-full mw-full" [src]="image">
+
+            </div>
+
+          </ion-slide>
+
+        </ion-slides>
+
+        <button class="p-absolute z-100 shadow-lg pin-t-10 pin-r-10" *ngIf="newIssue.images.length" color="light" mini ion-fab (click)="confirmDeleteImage()">
+          <ion-icon name="close" class="icon-sizing"></ion-icon>
+        </button>
+
+        <div class="p-absolute d-flex items-center justify-center pin-t pin-b pin-l pin-r" *ngIf="!newIssue.images.length">
+
+          <div class="placeholder-img"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="w-full p-relative d-flex justify-center" margin-bottom>
+      <div class="p-absolute w-full bg-img-box h-1/2"></div>
+      <button ion-button round (click)="addImageActionSheet()">
+        {{ 'NEW.ADD_IMAGE_BUTTON' | translate }}
+      </button>
+    </div>
+
+    <ion-item>
+      <ion-label>Type</ion-label>
+      <ion-select name="type" [(ngModel)]="newIssue.type">
+        <ion-option *ngFor="let type of types.list" value="{{ type.name }}">{{ type.name }}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-textarea 
+      name="description"
+      rows="8"
+      [(ngModel)]="newIssue.description" 
+      placeholder="Tell us about this issue...">
+    </ion-textarea>
+  </ion-item>
+
+</form>
+
+</ion-content>
+

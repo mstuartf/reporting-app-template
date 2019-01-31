@@ -1,0 +1,103 @@
+<ion-header>
+
+	<ion-navbar>
+		<ion-title>
+			{{ 'SETTINGS.TITLE' | translate }}
+		</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+	<ion-list>
+		
+		<!-- notification settings -->
+		<ion-list-header padding-top>
+			{{ 'SETTINGS.ACCOUNT_HEADER' | translate }}
+		</ion-list-header>
+
+		<ion-item detail-push (click)="editSettings('firstName,lastName')">
+			<ion-label>
+				{{ 'SETTINGS.NAME_LABEL' | translate }}
+			</ion-label>
+			<div item-content padding-right>
+				<span ion-text color="grey-light">
+					{{ user.firstName }} {{ user.lastName }}
+				</span>
+			</div>
+		</ion-item>
+
+		<ion-item detail-push (click)="editSettings('emailAddress')">
+			<ion-label>
+				{{ 'SETTINGS.EMAIL_LABEL' | translate }}
+			</ion-label>
+			<div item-content padding-right>
+				<span ion-text color="grey-light">
+					{{ user.emailAddress }}
+				</span>
+			</div>
+		</ion-item>
+
+		<ion-item detail-push (click)="editSettings('mobileNumber')">
+			<ion-label>
+				{{ 'SETTINGS.MOBILE_LABEL' | translate }}
+			</ion-label>
+			<div item-content padding-right>
+				<span ion-text color="grey-light">
+					{{ user.mobileNumber }}
+				</span>
+			</div>
+		</ion-item>
+
+		<!-- notification settings -->
+		<ion-list-header padding-top>
+			{{ 'SETTINGS.NOTIFICATIONS_HEADER' | translate }}
+		</ion-list-header>
+
+		<ion-item>
+			<ion-label>
+				{{ 'SETTINGS.EMAIL_NOTIFICATIONS_LABEL' | translate }}
+			</ion-label>
+			<ion-toggle 
+				[(ngModel)]="user.emailNotifications" 
+				(ionChange)="settingsEdited('emailNotifications')">		
+			</ion-toggle>
+		</ion-item>
+
+		<ion-item>
+			<ion-label>
+				{{ 'SETTINGS.PUSH_NOTIFICATIONS_LABEL' | translate }}
+			</ion-label>
+			<ion-toggle 
+				[(ngModel)]="user.pushNotifications"
+				(ionChange)="settingsEdited('pushNotifications')">
+			</ion-toggle>
+		</ion-item>
+
+		<!-- action buttons -->
+		<ion-list-header padding-top>
+			{{ 'SETTINGS.ACTIONS_HEADER' | translate }}
+		</ion-list-header>
+
+		<button ion-item (click)="confirmLogout()">
+			<ion-label>
+				{{ 'SETTINGS.LOGOUT_BUTTON' | translate }}
+			</ion-label>
+		</button>
+
+		<ion-item detail-push (click)="editSettings('slowMode,showCodes')">
+			<ion-label color="secondary">
+				{{ 'SETTINGS.SUPERUSER_SETTINGS' | translate }}
+			</ion-label>
+		</ion-item>
+
+		<button margin-left padding-right no-padding ion-item (click)="confirmDeleteAccount()">
+			<ion-label color="danger">
+				{{ 'SETTINGS.DELETE_BUTTON' | translate }}
+			</ion-label>
+		</button>
+
+	</ion-list>
+
+</ion-content>

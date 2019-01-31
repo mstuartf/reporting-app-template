@@ -1,0 +1,39 @@
+<ion-header>
+
+	<ion-navbar>
+
+		<ion-title *ngIf="issueFeed">
+			{{ 'LIST.TITLE' | translate: {count: issueFeed.count} }}
+		</ion-title>
+
+	</ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+	<div *ngIf="issueFeed">
+
+		<ion-list>
+
+			<button *ngFor="let issue of issueFeed.list" ion-item (click)="viewDetail(issue.id)">
+				<ion-avatar item-start>
+					<img src="https://avatars2.githubusercontent.com/u/3160101?s=460&amp;v=4">
+				</ion-avatar>
+				<h2>
+					{{ issue.type }}
+				</h2>
+				<p>
+					{{ issue.description }}
+				</p>
+			</button>
+
+		</ion-list>
+
+		<ion-infinite-scroll (ionInfinite)="fetchNext($event)">
+			<ion-infinite-scroll-content></ion-infinite-scroll-content>
+		</ion-infinite-scroll>
+
+	</div>
+
+</ion-content>

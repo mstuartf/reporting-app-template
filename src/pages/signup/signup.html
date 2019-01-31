@@ -1,0 +1,119 @@
+<ion-header no-border>
+  <ion-navbar #navBar transparent></ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides #signupSlider class=“swiper-no-swiping” (ionSlideDidChange)="updateSlideIndex()">
+
+    <ion-slide padding>
+
+      <form [formGroup]="signupForm1">
+
+        <div class="text-center" margin-bottom padding-bottom>
+          <h1 class="font-bolder">
+            {{ 'SIGNUP.TITLE' | translate: {page: slideIndex + 1} }}
+          </h1>
+        </div>
+
+        <ion-list>
+          <ion-item>
+            <ion-label fixed>
+              {{ 'SIGNUP.EMAIL_LABEL' | translate }}
+            </ion-label>
+            <ion-input type="email" formControlName="emailAddress"></ion-input>
+          </ion-item>
+
+          <ion-item no-lines text-wrap text-center
+          [class.invisible]="!(!signupForm1.controls.emailAddress.valid && (signupForm1.controls.emailAddress.dirty || form1Attempt))">
+          <p>{{ 'SIGNUP.INVALID_EMAIL' | translate }}</p>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>
+            {{ 'SIGNUP.PASSWORD_LABEL' | translate }}
+          </ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines text-wrap text-center
+        [class.invisible]="!(!signupForm1.controls.password.valid && (signupForm1.controls.password.dirty || form1Attempt))">
+        <p>{{ 'SIGNUP.INVALID_PASSWORD' | translate }}</p>
+      </ion-item>
+
+    </ion-list>
+
+    <div>
+      <p>
+        <button ion-button color="secondary" block (click)="nextSlide()">
+          {{ 'SIGNUP.BUTTON_1' | translate }}
+        </button>
+      </p>
+    </div>
+
+  </form>
+</ion-slide>
+
+<ion-slide padding>
+  <form [formGroup]="signupForm2">
+
+    <div class="text-center" margin-bottom padding-bottom>
+          <h1 class="font-bolder">
+        {{ 'SIGNUP.TITLE' | translate: {page: slideIndex + 1} }}
+      </h1>
+    </div>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label fixed>
+          {{ 'SIGNUP.FIRST_NAME' | translate }}
+        </ion-label>
+        <ion-input type="text" formControlName="firstName"></ion-input>
+      </ion-item>
+
+      <ion-item no-lines text-wrap text-center
+      [class.invisible]="!(!signupForm2.controls.firstName.valid && (signupForm2.controls.firstName.dirty || form2Attempt))">
+      <p>{{ 'SIGNUP.INVALID_FIRST_NAME' | translate }}</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>
+        {{ 'SIGNUP.LAST_NAME' | translate }}
+      </ion-label>
+      <ion-input type="text" formControlName="lastName"></ion-input>
+    </ion-item>
+
+    <ion-item no-lines text-wrap text-center
+    [class.invisible]="!(!signupForm2.controls.lastName.valid && (signupForm2.controls.lastName.dirty || form2Attempt))">
+    <p>{{ 'SIGNUP.INVALID_LAST_NAME' | translate }}</p>
+  </ion-item>
+
+  <ion-item no-lines text-wrap>
+    <ion-label>
+      {{ 'SIGNUP.TERMS_AND_CONDITIONS' | translate }}
+    </ion-label>
+    <ion-checkbox formControlName="confirmedTerms"></ion-checkbox>
+  </ion-item>
+
+  <ion-item no-lines text-wrap text-center
+  [class.invisible]="!(!signupForm2.controls.confirmedTerms.valid && form2Attempt)">
+  <p>{{ 'SIGNUP.INVALID_TERMS_AND_CONDITIONS' | translate }}</p>
+</ion-item>
+
+</ion-list>
+
+<div>
+  <p>
+    <button ion-button color="primary" block (click)="doSignup()">
+      {{ 'SIGNUP.BUTTON_2' | translate }}
+    </button>
+  </p>
+</div>
+
+</form>
+</ion-slide>
+
+</ion-slides>
+
+</ion-content>
