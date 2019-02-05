@@ -10,12 +10,13 @@ export class IssueModel {
 
 	constructor(raw?: IssueObject) {
 		
+		// todo: images not currently saved on backend so using placeholders
 		if (raw) {
 			this.id = raw.id;
 			this.type = raw.type;
 			this.description = raw.description;
 			this.reportedDate = new Date(raw.reported);
-			this.images = ['https://avatars2.githubusercontent.com/u/3160101?s=460&amp;v=4', 'https://avatars2.githubusercontent.com/u/3160101?s=460&amp;v=4']
+			this.images = [`assets/imgs/fake/${(raw.id % 5) + 1}.jpeg`, `assets/imgs/fake/${(raw.id % 5) + 2 > 5 ? 1 : (raw.id % 5) + 2}.jpeg`]
 		}
 		
 	}
