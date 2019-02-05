@@ -109,7 +109,7 @@ export class SignupPage {
 
 	patchUserAction () {
 
-		let payload: UserActions.EditUserPayload = {
+		let payload = {
 			user: this.user,
 			fields: Object.keys(this.signupForm2.controls)
 		}

@@ -209,7 +209,7 @@ export class SettingsPage {
     
     let alert = this.alertCtrl.create({
       title: 'Error',
-      subTitle: JSON.stringify(action.payload.error),
+      subTitle: JSON.stringify(action.payload.detail),
       buttons: ['Dismiss']
     });
     
