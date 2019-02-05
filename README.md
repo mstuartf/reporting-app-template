@@ -2,6 +2,8 @@
 
 Simple Angular 5 / Ionic 3 app for reporting utilities issues. Template based on an abandoned client project. 
 
+![](flow.gif)
+
 ## Principles followed
 
 ### Store
