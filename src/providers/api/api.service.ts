@@ -24,6 +24,14 @@ interface requestOptions {
 @Injectable()
 export class Api {
 
+  // we could add this proxies object to ionic.config.json:
+  // "proxies": [
+  //   {
+  //     "path": "/api/v1",
+  //     "proxyUrl": "http://35.178.213.41/api/v1"
+  //   }
+  // ]
+  // but this does not work when using the Ionic DevApp so we need the full URL here:
   url: string = 'http://35.178.213.41/api/v1'
 
   onDestroy$ = new Subject()

@@ -4,11 +4,5 @@
     "cordova": {}
   },
   "type": "ionic-angular",
-  "_proxies": [
-    {
-      "path": "/api/v1",
-      "proxyUrl": "http://35.178.213.41/api/v1"
-    }
-  ],
   "id": "3e2c2373"
 }
