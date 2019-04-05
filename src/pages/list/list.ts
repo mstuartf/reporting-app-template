@@ -11,7 +11,6 @@ import { IssueQuery } from '@models/issues/issue.interface'
 import { IssuesFeed } from '@models/issues/issue.model'
 import { AppState } from '@app/app.state'
 
-
 @IonicPage()
 @Component({
   selector: 'page-list',

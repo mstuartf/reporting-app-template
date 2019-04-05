@@ -16,7 +16,7 @@ export class IssueModel {
 			this.type = raw.type;
 			this.description = raw.description;
 			this.reportedDate = new Date(raw.reported);
-			this.images = [`assets/imgs/fake/${(raw.id % 5) + 1}.jpeg`, `assets/imgs/fake/${(raw.id % 5) + 2 > 5 ? 1 : (raw.id % 5) + 2}.jpeg`]
+			this.images = ["uvvrz1nlrz3hvjx06plo", "uvvrz1nlrz3hvjx06plo"]
 		}
 		
 	}
