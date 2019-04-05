@@ -15,6 +15,9 @@ import { IssueModel } from '@models/issues/issue.model'
 import { TypesList } from '@models/types/type.model'
 import { AppState } from '@app/app.state'
 
+import { CloudinaryImgService } from '@providers/cloudinary/cloudinary.service';
+
+import { Observable } from 'rxjs';
 
 @IonicPage()
 @Component({
@@ -45,6 +48,7 @@ export class NewPage {
     public issueService: IssueService,
     public loadingCtrl: LoadingController,
     public translate: TranslateService,
+    public cloudinaryService: CloudinaryImgService,
     private store: Store<AppState>
     ) {
 
@@ -100,7 +104,7 @@ export class NewPage {
 
       this.loading = this.loadingCtrl.create({ content: res })
       this.loading.present().then(() => {
-        this.addIssueAction()
+        this.uploadImages()
       });
 
     })
@@ -224,18 +228,34 @@ export class NewPage {
   // function to handle the base64 string from browser or mobile
   processBase64Image (base64String: string) {
     this.imagePath = base64String
-    this.newIssue.images.push(base64String)
+    this.newIssue.base64Strings.push(base64String)
 
     this.imageSlider.update()
     
     setTimeout(() => {
-      this.imageSlider.slideTo(this.newIssue.images.length - 1)
+      this.imageSlider.slideTo(this.newIssue.base64Strings.length - 1)
     }, 300);
 
   }
 
+  // todo: this should be handled by the store
+  // this function chains the image uploads together
+  private uploadImages() {
+
+    const calls = [];
+    this.newIssue.base64Strings.forEach(imgString => {
+      calls.push(this.cloudinaryService.upload(imgString));
+    });
+
+    Observable.forkJoin(calls).subscribe(cloudinaryImgs => {
+      this.newIssue.setImages(cloudinaryImgs);
+      this.addIssueAction()
+    });
+
+  }
+
   confirmDeleteImage() {
-    console.log('confirmDeleteImage')
+    
     this.translate.get(['NEW.DELETE_IMAGE.TITLE', 'NEW.DELETE_IMAGE.MESSAGE', 'NEW.DELETE_IMAGE.CANCEL', 'NEW.DELETE_IMAGE.CONFIRM'])
 
     .subscribe((res: object) => {
@@ -266,10 +286,10 @@ export class NewPage {
 
     const index = this.imageSlider.getActiveIndex()
     
-    if (this.newIssue.images.length > 1)
+    if (this.newIssue.publicIds.length > 1)
       this.imageSlider.slidePrev()
 
-    this.newIssue.images.splice(index, 1)
+    this.newIssue.publicIds.splice(index, 1)
 
   }
 

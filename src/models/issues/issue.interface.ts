@@ -17,8 +17,9 @@ export interface IssueQuery {
 
 // payload expeced by POST /issues
 export interface IssuePayload {
-	type: string,
-	description: string
+	type: string;
+	description: string;
+	public_ids: string[];
 }
 
 // error returned by GET /issues/:id

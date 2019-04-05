@@ -35,7 +35,7 @@
 
         <ion-slides class="w-full h-full bg-img-box border-radius-img-box" padding #imageSlider>
 
-          <ion-slide class="w-full h-full" padding-top padding-left padding-right *ngFor="let image of newIssue.images">
+          <ion-slide class="w-full h-full" padding-top padding-left padding-right *ngFor="let image of newIssue.base64Strings">
 
             <div class="w-full h-img-box d-flex items-center justify-center">
 
@@ -47,11 +47,11 @@
 
         </ion-slides>
 
-        <button class="p-absolute z-100 shadow-lg pin-t-10 pin-r-10" *ngIf="newIssue.images.length" color="light" mini ion-fab (click)="confirmDeleteImage()">
+        <button class="p-absolute z-100 shadow-lg pin-t-10 pin-r-10" *ngIf="newIssue.base64Strings.length" color="light" mini ion-fab (click)="confirmDeleteImage()">
           <ion-icon name="close" class="icon-sizing"></ion-icon>
         </button>
 
-        <div class="p-absolute d-flex items-center justify-center pin-t pin-b pin-l pin-r" *ngIf="!newIssue.images.length">
+        <div class="p-absolute d-flex items-center justify-center pin-t pin-b pin-l pin-r" *ngIf="!newIssue.base64Strings.length">
 
           <div class="placeholder-img"></div>
 

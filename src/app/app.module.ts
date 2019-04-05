@@ -37,7 +37,6 @@ import { UserService } from '@providers/users/user.service'
 import { AuthService } from '@providers/auth/auth.service'
 import { Api } from '@providers/api/api.service'
 
-
 // By default ngx-translate will look for your translation json files in i18n/, but for Ionic you must change this 
 // to look in the src/assets directory by creating a function that returns a new TranslateLoader:
 export function createTranslateLoader(http: HttpClient) {
@@ -91,7 +90,7 @@ export function createTranslateLoader(http: HttpClient) {
   SplashScreen,
   Camera,
   { provide: ErrorHandler, useClass: IonicErrorHandler },
-  { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }  // attach token to all requests
+  { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },  // attach token to all requests
   ]
 })
 export class AppModule {}
