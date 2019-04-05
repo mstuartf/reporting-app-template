@@ -4,7 +4,8 @@ export interface IssueObject {
 	id: number,
 	type: string,
 	description: string,
-	reported: string
+	reported: string,
+	images: any[]
 }
 
 // results object returned by GET /issues
@@ -19,7 +20,7 @@ export interface IssueQuery {
 export interface IssuePayload {
 	type: string;
 	description: string;
-	public_ids: string[];
+	images: string[];
 }
 
 // error returned by GET /issues/:id

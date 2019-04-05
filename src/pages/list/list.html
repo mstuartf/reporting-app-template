@@ -18,7 +18,7 @@
 
 			<button *ngFor="let issue of issueFeed.list" ion-item (click)="viewDetail(issue.id)">
 				<ion-avatar item-start>
-					<cl-image [public-id]="issue.publicIds[0]"></cl-image>
+					<cl-image [public-id]="issue.images[0].public_id"></cl-image>
 				</ion-avatar>
 				<h2>
 					{{ issue.type }}

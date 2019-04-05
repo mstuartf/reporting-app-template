@@ -34,7 +34,7 @@ export class CloudinaryImgService {
 			fd.append('file', file);
 			xhr.send(fd);
 			
-			return {};
+			return {unsubscribe: () => {}};
 
 		});
 

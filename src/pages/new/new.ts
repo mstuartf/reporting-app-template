@@ -16,6 +16,7 @@ import { TypesList } from '@models/types/type.model'
 import { AppState } from '@app/app.state'
 
 import { CloudinaryImgService } from '@providers/cloudinary/cloudinary.service';
+import { CloudinaryImg } from '@providers/cloudinary/cloudinary.interface';
 
 import { Observable } from 'rxjs';
 
@@ -247,7 +248,7 @@ export class NewPage {
       calls.push(this.cloudinaryService.upload(imgString));
     });
 
-    Observable.forkJoin(calls).subscribe(cloudinaryImgs => {
+    Observable.forkJoin(calls).subscribe((cloudinaryImgs: CloudinaryImg[]) => {
       this.newIssue.setImages(cloudinaryImgs);
       this.addIssueAction()
     });
@@ -286,10 +287,10 @@ export class NewPage {
 
     const index = this.imageSlider.getActiveIndex()
     
-    if (this.newIssue.publicIds.length > 1)
+    if (this.newIssue.base64Strings.length > 1)
       this.imageSlider.slidePrev()
 
-    this.newIssue.publicIds.splice(index, 1)
+    this.newIssue.base64Strings.splice(index, 1)
 
   }
 

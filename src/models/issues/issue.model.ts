@@ -34,7 +34,7 @@ export class IssueModel {
 			this.type = raw.type;
 			this.description = raw.description;
 			this.reportedDate = new Date(raw.reported);
-			this.publicIds = raw.public_ids || ["uvvrz1nlrz3hvjx06plo"]
+			this.images = raw.images || [{public_id: "uvvrz1nlrz3hvjx06plo"}] //todo: map to camel
 		}
 		
 	}
@@ -51,7 +51,7 @@ export class IssueModel {
 		return payload;
 	}
 
-	public setImages(cloudinaryImgs: string[]) {
+	public setImages(cloudinaryImgs: CloudinaryImg[]) {
 		const images = [];
 		cloudinaryImgs.forEach(function(cloudinaryImg) {
 			images.push(new ImgModel(cloudinaryImg))

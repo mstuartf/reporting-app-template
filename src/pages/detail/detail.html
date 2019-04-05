@@ -17,11 +17,11 @@
 
 			<ion-slides class="w-full h-full bg-img-box border-radius-img-box" padding #imageSlider>
 
-				<ion-slide class="w-full h-full" padding-top padding-left padding-right *ngFor="let publicId of issue.publicIds">
+				<ion-slide class="w-full h-full" padding-top padding-left padding-right *ngFor="let image of issue.images">
 
 					<div class="w-full h-img-box d-flex items-center justify-center">
 
-						<cl-image [public-id]="publicId"></cl-image>
+						<cl-image [public-id]="image.public_id"></cl-image>
 
 					</div>
 
