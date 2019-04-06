@@ -2,6 +2,7 @@ import { UserObject, LoginPayload, SignupPayload } from '@models/users/user.inte
 
 export class UserModel {
 
+	id: number;
 	emailAddress: string;
 	password: string;
 	firstName: string;
@@ -19,6 +20,7 @@ export class UserModel {
 		
 		if (raw) {
 
+			this.id = raw.pk;
 			this.emailAddress = raw.email;
 			this.firstName = raw.first_name;
 			this.lastName = raw.last_name;

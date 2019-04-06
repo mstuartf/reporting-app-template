@@ -29,7 +29,7 @@ export class CloudinaryImgService {
 
 	private get publicId(): string {
 		const timeStamp = new Date().toISOString();
-		return `${this.masterFolderPath}/${this.user.emailAddress}/${timeStamp}`;
+		return `${this.masterFolderPath}/${this.user.id}/${timeStamp}`;
 	}
 
 	upload(file: string) {
