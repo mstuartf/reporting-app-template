@@ -7,9 +7,8 @@ export class IssueModel {
 	id: number;
 	type: string;
 	description: string;
-	reportedDate: any;
+	reportedDate: Date;
 	images: ImgModel[] = []
-	base64Strings: string[] = [];
 
 	constructor(raw?: IssueObject) {
 		

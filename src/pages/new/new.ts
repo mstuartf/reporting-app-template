@@ -30,13 +30,13 @@ export class NewPage {
   @ViewChild('browserFileInput') browserFileInput  // file input element for browser testing
   @ViewChild('imageSlider') imageSlider: Slides
 
-  types: TypesList
-  loading: Loading
-  imagePath: string
-  onDestroy$ = new Subject()
-  cameraOptions: CameraOptions
-  libraryOptions: CameraOptions
-  newIssue: IssueModel = new IssueModel()
+  public types: TypesList;
+  public loading: Loading;
+  private onDestroy$ = new Subject();
+  private cameraOptions: CameraOptions;
+  private libraryOptions: CameraOptions;
+  public base64Strings: string[] = [];  // holding array for the strings before they are saved
+  public newIssue: IssueModel = new IssueModel();
 
   constructor(
     public navCtrl: NavController, 
@@ -226,17 +226,13 @@ export class NewPage {
     this.processBase64Image(base64Image)
   }
 
-  // function to handle the base64 string from browser or mobile
+  // add new base64 string to the array, update the slider and show the new image
   processBase64Image (base64String: string) {
-    this.imagePath = base64String
-    this.newIssue.base64Strings.push(base64String)
-
+    this.base64Strings.push(base64String)
     this.imageSlider.update()
-    
     setTimeout(() => {
-      this.imageSlider.slideTo(this.newIssue.base64Strings.length - 1)
+      this.imageSlider.slideTo(this.base64Strings.length - 1)
     }, 300);
-
   }
 
   // todo: this should be handled by the store
@@ -244,7 +240,7 @@ export class NewPage {
   private uploadImages() {
 
     const calls = [];
-    this.newIssue.base64Strings.forEach(imgString => {
+    this.base64Strings.forEach(imgString => {
       calls.push(this.cloudinaryService.upload(imgString));
     });
 
@@ -287,10 +283,10 @@ export class NewPage {
 
     const index = this.imageSlider.getActiveIndex()
     
-    if (this.newIssue.base64Strings.length > 1)
+    if (this.base64Strings.length > 1)
       this.imageSlider.slidePrev()
 
-    this.newIssue.base64Strings.splice(index, 1)
+    this.base64Strings.splice(index, 1)
 
   }
 
