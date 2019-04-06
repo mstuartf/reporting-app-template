@@ -93,6 +93,39 @@ export class NewPage {
 
   }
 
+  confirmCancel () {
+
+    if (!this.newIssue.type && !this.newIssue.description && !this.base64Strings.length) {
+      return this.closePage();
+    }
+
+    this.translate.get(['NEW.CANCEL_POPUP.TITLE', 'NEW.CANCEL_POPUP.MESSAGE', 'NEW.CANCEL_POPUP.CANCEL', 'NEW.CANCEL_POPUP.CONFIRM'])
+
+    .subscribe((res: object) => {
+
+      let alert = this.alertCtrl.create({
+        title: res['NEW.CANCEL_POPUP.TITLE'],
+        message: res['NEW.CANCEL_POPUP.MESSAGE'],
+        buttons: [
+        {
+          text: res['NEW.CANCEL_POPUP.CANCEL'],
+          role: 'cancel'
+        },
+        {
+          text: res['NEW.CANCEL_POPUP.CONFIRM'],
+          handler: () => {
+            this.closePage();
+          }
+        }
+        ]
+      });
+
+      alert.present();
+
+    })
+
+  }
+
   closePage () {
     this.viewCtrl.dismiss()
   }

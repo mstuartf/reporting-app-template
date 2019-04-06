@@ -19,7 +19,7 @@
 		"NAME_LABEL": "Name",
 		"EMAIL_LABEL": "Email",
 		"MOBILE_LABEL": "Mobile",
-		"NOTIFICATIONS_HEADER": "Notifcations",
+		"NOTIFICATIONS_HEADER": "Notifications",
 		"EMAIL_NOTIFICATIONS_LABEL": "Email notifications",
 		"PUSH_NOTIFICATIONS_LABEL": "Push notifications",
 		"ACTIONS_HEADER": "Actions",
@@ -73,6 +73,12 @@
 			"MESSAGE": "Are you sure you want to remove this image?",
 			"CONFIRM": "OK",
 			"CANCEL": "Cancel"
+		},
+		"CANCEL_POPUP": {
+			"TITLE": "Confirm",
+			"MESSAGE": "Are you sure you discard this issue? All changes will be lost.",
+			"CANCEL": "Cancel",
+			"CONFIRM": "Discard"
 		}
 	},
 	"DETAIL": {
@@ -130,7 +136,7 @@
 		"SIGNUP_BUTTON": "Sign up"
 	},
 	"SIGNUP_COMPLETE": {
-		"MAIN_MESSAGE": "Thanks for signing up! We've sent you a verifcation email etc etc...",
+		"MAIN_MESSAGE": "This is the confimation page! In production, this is where we tell the user to verify their email address.",
 		"BUTTON": "Back to landing page"
 	}
 }
