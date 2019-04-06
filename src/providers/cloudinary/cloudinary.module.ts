@@ -7,10 +7,12 @@ import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5
 import * as Cloudinary from 'cloudinary-core';
 
 import { CloudinaryImgService } from './cloudinary.service';
+import { cloudinaryConfig } from './cloudinary.config';
+
 
 @NgModule({
   imports: [
-  	CloudinaryModule.forRoot(Cloudinary, { cloud_name: 'deo77u4jf'} as CloudinaryConfiguration)
+  	CloudinaryModule.forRoot(Cloudinary, { cloud_name: cloudinaryConfig.cloudName} as CloudinaryConfiguration)
   ],
   exports: [
   	CloudinaryModule
