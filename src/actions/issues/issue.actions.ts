@@ -1,7 +1,9 @@
 import { Action } from '@ngrx/store'
 
-import { IssueObject, IssueQuery, IssueError, AddIssueError } from '@models/issues/issue.interface'
-import { IssueModel, IssuesFeed } from '@models/issues/issue.model'
+import { IssueObject, IssueError, AddIssueError } from '@models/issues/issue.interface';
+import { IssueModel } from '@models/issues/issue.model';
+import { IssueQuery } from '@models/issues-feed/issues-feed.interface';
+import { IssuesFeed } from '@models/issues-feed/issues-feed.model';
 
 ////////////////////////////////////////////////////////////////////////////
 // TYPES ///////////////////////////////////////////////////////////////////

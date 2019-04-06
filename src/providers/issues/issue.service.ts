@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core'
 
-import { IssueObject, IssueQuery } from '@models/issues/issue.interface'
-import { IssueModel, IssuesFeed } from '@models/issues/issue.model'
+import { IssueObject } from '@models/issues/issue.interface'
+import { IssueModel } from '@models/issues/issue.model'
+import { IssueQuery } from '@models/issues-feed/issues-feed.interface';
+import { IssuesFeed } from '@models/issues-feed/issues-feed.model';
 import { Api } from '@providers/api/api.service'
 
 

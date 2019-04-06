@@ -7,8 +7,8 @@ import { Store } from '@ngrx/store'
 
 import { IssueService } from '@providers/issues/issue.service'
 import * as IssueActions from '@actions/issues/issue.actions'
-import { IssueQuery } from '@models/issues/issue.interface'
-import { IssuesFeed } from '@models/issues/issue.model'
+import { IssueQuery } from '@models/issues-feed/issues-feed.interface';
+import { IssuesFeed } from '@models/issues-feed/issues-feed.model';
 import { AppState } from '@app/app.state'
 
 @IonicPage()

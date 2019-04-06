@@ -3,9 +3,10 @@ import { Actions, Effect, ofType } from '@ngrx/effects'
 import { Injectable } from '@angular/core'
 import { of } from 'rxjs/observable/of'
 
-import { IssueObject, IssueQuery, IssueError, AddIssueError } from '@models/issues/issue.interface'
+import { IssueObject, IssueError, AddIssueError } from '@models/issues/issue.interface'
 import { IssueService } from '@providers/issues/issue.service'
 import * as IssueActions from '@actions/issues/issue.actions'
+import { IssueQuery } from '@models/issues-feed/issues-feed.interface';
 
 
 @Injectable()

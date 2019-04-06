@@ -9,14 +9,6 @@ export interface IssueObject {
 	images: ImgObject[]
 }
 
-// results object returned by GET /issues
-export interface IssueQuery {
-	count: number,
-	results: IssueObject[],
-	next: any,
-	previous: any
-}
-
 // payload expeced by POST /issues
 export interface IssuePayload {
 	type: string;

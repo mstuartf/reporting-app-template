@@ -1,4 +1,4 @@
-import { IssueObject, IssueQuery, IssuePayload } from '@models/issues/issue.interface'
+import { IssueObject, IssuePayload } from '@models/issues/issue.interface'
 import { ImgModel } from '@models/img/img.model';
 import { CloudinaryImg } from '@models/img/img.interface';
 
@@ -61,29 +61,3 @@ export class IssueModel {
 	}
 
 }
-
-// todo: move this to separate file
-export class IssuesFeed {
-
-	list: IssueModel[] = [];
-	count: number;
-	next: boolean;
-
-	constructor(raw?: IssueQuery) {
-		
-		if (raw) {
-
-			this.count = raw.count;
-			this.next = !!raw.next
-
-			for (var i = 0; i < raw.results.length; i++) {
-				let issue = new IssueModel(raw.results[i]);
-				this.list.push(issue);
-			}
-			
-		}
-		
-	}
-
-}
-

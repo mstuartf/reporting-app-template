@@ -1,7 +1,8 @@
-import { IssueObject, IssueQuery } from '@models/issues/issue.interface'
+import { IssueObject } from '@models/issues/issue.interface'
 import { UserObject } from '@models/users/user.interface'
 import { AuthObject } from '@models/auth/auth.interface'
 import { TypeQuery } from '@models/types/type.interface'
+import { IssueQuery } from '@models/issues-feed/issues-feed.interface';
 
 
 export interface AppState {
