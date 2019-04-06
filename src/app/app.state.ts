@@ -1,7 +1,7 @@
 import { IssueObject } from '@models/issues/issue.interface'
 import { UserObject } from '@models/users/user.interface'
 import { AuthObject } from '@models/auth/auth.interface'
-import { TypeQuery } from '@models/types/type.interface'
+import { TypeQuery } from '@models/types-list/types-list.interface';
 import { IssueQuery } from '@models/issues-feed/issues-feed.interface';
 
 

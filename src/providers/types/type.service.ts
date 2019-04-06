@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 
-import { TypeQuery } from '@models/types/type.interface'
+import { TypeQuery } from '@models/types-list/types-list.interface';
 import { Api } from '@providers/api/api.service'
 
 

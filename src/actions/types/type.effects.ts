@@ -5,7 +5,8 @@ import { of } from 'rxjs/observable/of'
 
 import { TypeService } from '@providers/types/type.service'
 import * as TypeActions from '@actions/types/type.actions'
-import { TypeQuery, TypeError } from '@models/types/type.interface'
+import { TypeError } from '@models/types/type.interface'
+import { TypeQuery } from '@models/types-list/types-list.interface';
 
 
 @Injectable()

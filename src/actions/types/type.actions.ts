@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store'
 
-import { TypeQuery, TypeError } from '@models/types/type.interface'
+import { TypeError } from '@models/types/type.interface'
+import { TypeQuery } from '@models/types-list/types-list.interface';
 
 ////////////////////////////////////////////////////////////////////////////
 // TYPES ///////////////////////////////////////////////////////////////////

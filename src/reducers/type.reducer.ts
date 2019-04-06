@@ -1,5 +1,5 @@
 import * as TypeActions from '@actions/types/type.actions'
-import { TypeQuery } from '@models/types/type.interface'
+import { TypeQuery } from '@models/types-list/types-list.interface';
 
 
 export function typesReducer(state: TypeQuery, action: TypeActions.Actions) {

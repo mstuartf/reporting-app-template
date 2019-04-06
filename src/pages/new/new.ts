@@ -10,9 +10,9 @@ import { Store } from '@ngrx/store'
 import { IssueService } from '@providers/issues/issue.service'
 import * as IssueActions from '@actions/issues/issue.actions'
 import * as TypeActions from '@actions/types/type.actions'
-import { TypeQuery } from '@models/types/type.interface'
+import { TypeQuery } from '@models/types-list/types-list.interface';
 import { IssueModel } from '@models/issues/issue.model'
-import { TypesList } from '@models/types/type.model'
+import { TypesList } from '@models/types-list/types-list.model';
 import { AppState } from '@app/app.state'
 
 import { CloudinaryImgService } from '@providers/cloudinary/cloudinary.service';
