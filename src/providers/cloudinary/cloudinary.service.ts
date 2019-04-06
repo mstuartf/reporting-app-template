@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { CloudinaryImg } from './cloudinary.interface';
+import { CloudinaryImg } from '@models/img/img.interface';
 
 const cloudName = 'deo77u4jf';
 const unsignedUploadPreset = "png1qlbk";

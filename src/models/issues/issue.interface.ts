@@ -1,3 +1,4 @@
+import { ImgPayload, ImgObject } from '@models/img/img.interface';
 
 // raw issue object from the backend returned by GET /issues/:id
 export interface IssueObject {
@@ -5,7 +6,7 @@ export interface IssueObject {
 	type: string,
 	description: string,
 	reported: string,
-	images: any[]
+	images: ImgObject[]
 }
 
 // results object returned by GET /issues
@@ -20,7 +21,7 @@ export interface IssueQuery {
 export interface IssuePayload {
 	type: string;
 	description: string;
-	images: string[];
+	images: ImgPayload[];
 }
 
 // error returned by GET /issues/:id

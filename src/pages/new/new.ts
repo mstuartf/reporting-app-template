@@ -16,7 +16,7 @@ import { TypesList } from '@models/types/type.model'
 import { AppState } from '@app/app.state'
 
 import { CloudinaryImgService } from '@providers/cloudinary/cloudinary.service';
-import { CloudinaryImg } from '@providers/cloudinary/cloudinary.interface';
+import { CloudinaryImg } from '@models/img/img.interface';
 
 import { Observable } from 'rxjs';
 
