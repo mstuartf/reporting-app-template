@@ -4,7 +4,7 @@
 </ion-tabs>
 
 
-<ion-fab bottom center>
+<ion-fab bottom center *ngIf="showFab">
     <button ion-fab (click)="createNew()">
         <ion-icon name="add" class="add-button"></ion-icon>
     </button>

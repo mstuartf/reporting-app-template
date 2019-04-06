@@ -24,6 +24,7 @@
     "@cloudinary/angular-5.x": "^1.0.2",
     "@ionic-native/camera": "^4.17.0",
     "@ionic-native/core": "~4.15.0",
+    "@ionic-native/keyboard": "^4.20.0",
     "@ionic-native/splash-screen": "~4.15.0",
     "@ionic-native/status-bar": "~4.15.0",
     "@ionic/pro": "2.0.3",

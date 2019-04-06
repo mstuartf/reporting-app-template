@@ -1,5 +1,6 @@
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular'
 import { SplashScreen } from '@ionic-native/splash-screen'
+import { Keyboard } from '@ionic-native/keyboard';
 import { BrowserModule } from '@angular/platform-browser'
 import { ErrorHandler, NgModule } from '@angular/core'
 import { StatusBar } from '@ionic-native/status-bar'
@@ -88,6 +89,7 @@ export function createTranslateLoader(http: HttpClient) {
   TypeService,
   StatusBar,
   SplashScreen,
+  Keyboard,
   Camera,
   { provide: ErrorHandler, useClass: IonicErrorHandler },
   { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },  // attach token to all requests

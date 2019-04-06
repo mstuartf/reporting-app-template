@@ -1,8 +1,10 @@
-import { IonicPage, ModalController } from 'ionic-angular'
-import { Component } from '@angular/core'
+import { IonicPage, ModalController, Platform } from 'ionic-angular';
+import { Keyboard } from '@ionic-native/keyboard';
 
-import { SettingsPage } from '@pages/settings/settings'
-import { ListPage } from '@pages/list/list'
+import { Component } from '@angular/core';
+
+import { SettingsPage } from '@pages/settings/settings';
+import { ListPage } from '@pages/list/list';
 
 
 @IonicPage()
@@ -15,7 +17,23 @@ export class TabsPage {
 	tab1Root = ListPage;
 	tab2Root = SettingsPage;
 
-	constructor(public modalCtrl: ModalController) {}
+	showFab = true;
+
+	constructor(public modalCtrl: ModalController, private platform: Platform, private keyboard: Keyboard) {
+
+		this.platform.ready().then(() => {
+
+            this.keyboard.onKeyboardShow().subscribe(() => {
+                this.showFab = false;
+            });
+
+            this.keyboard.onKeyboardHide().subscribe(() => {
+                this.showFab = true;
+            });
+            
+		});
+
+	}
 
 	// open NewPage as a modal (not as part of the nav stack)
 	createNew () {
