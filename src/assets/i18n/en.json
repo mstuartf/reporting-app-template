@@ -53,6 +53,7 @@
 	"NEW": {
 		"LOADING": "Loading...",
 		"SAVING": "Saving...",
+		"PROCESSING": "Processing...",
 		"TITLE": "Create new issue",
 		"CAMERA_BUTTON": "Take picture",
 		"LIBRARY_BUTTON": "Select picture",

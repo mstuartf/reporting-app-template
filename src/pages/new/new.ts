@@ -221,11 +221,20 @@ export class NewPage {
 
   getNewPicture (options: CameraOptions) {
 
-    if (!Camera['installed']())  // for browser testing
+    if (!Camera['installed']()) {
+      console.warn('KNOWN BUG: can\'t detect cancel event when browser testing so spinner will not be removed');
       this.browserFileInput.nativeElement.click()
+    }
 
     else
-      this.getNativePicture(options)  
+      this.getNativePicture(options)
+
+    // there can be a lag between taking / choosing the picture and the camera.getPicture callback firing
+    // so start showing a loading spinner here and remove it in the callback for better UX
+    this.translate.get('NEW.PROCESSING').subscribe((res: string) => {
+      this.loading = this.loadingCtrl.create({ content: res })
+      this.loading.present();
+    })
 
   }
 
@@ -235,6 +244,7 @@ export class NewPage {
         this.handleNativeImage(imageData)
       }, 
       (err) => {
+        this.loading.dismiss();
         console.log(err)
       }
       );
@@ -242,8 +252,14 @@ export class NewPage {
 
   // callback for the file input element on browser
   handleBrowserImage(event) {
-    if (!event.target.files.length) return  // if cancel is pressed there will be no files
-      const file = event.target.files[0]
+
+    if (!event.target.files.length) {  // if cancel is pressed there will be no files
+      this.loading.dismiss();
+      return;
+    }
+
+    const file = event.target.files[0]
+
     let reader: FileReader = new FileReader()  // native JS obj for reading the contents of files stored on the user's compute
     reader.readAsDataURL(file)
     reader.onload = (readerEvent: Event) => {  // this is triggered each time the reading operation is successfully completed.
@@ -251,6 +267,7 @@ export class NewPage {
         this.processBase64Image(reader.result)
       }
     }
+
   }
 
   // callback for the camera function on mobile
@@ -261,6 +278,7 @@ export class NewPage {
 
   // add new base64 string to the array, update the slider and show the new image
   processBase64Image (base64String: string) {
+    this.loading.dismiss();
     this.base64Strings.push(base64String)
     this.imageSlider.update()
     setTimeout(() => {
